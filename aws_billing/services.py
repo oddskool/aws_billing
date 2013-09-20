@@ -19,6 +19,8 @@ services = {
                 'AWS Data Pipeline':{'name':'adp'},
                 'Amazon Elastic MapReduce':{'name':'emr'},
                 'Amazon Glacier':{'name':'agl'},
+                'AWS Support (Developer)':{'name':'sup'},
+                '':{'name':'tva'}
             }
 
 def service_name(product_name):
