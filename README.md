@@ -22,10 +22,12 @@ Command-line mode
 
     $ python -m aws_billing.driver <account-id> <bucket-name>
 
+
 Server mode
 ~~~~~~~~~~~~~~~~~
 
     $ python -m aws_billing.server <account-id> <bucket-name>
+
 
 Then point your browser to `localhost:8888/` to see the report. Parsing is a bit long so be patient.
 
