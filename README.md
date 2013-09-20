@@ -14,13 +14,21 @@ To use tag-based costs breakdown you need to give a tag like e.g. "BILLING" with
 
 Otherwise the script will just break down your costs per service and service type (e.g. ec2 * BoxUsage vs ec2 * EBS)
 
+
+
+
+
 Usage
 -----
+
+
 
 Command-line mode
 ~~~~~~~~~~~~~~~~~
 
     $ python -m aws_billing.driver <account-id> <bucket-name>
+
+
 
 
 Server mode
