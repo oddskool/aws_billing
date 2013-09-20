@@ -12,7 +12,7 @@ Once this is done, a CSV file will be written (and updated) to the bucket you ga
 
 To use tag-based costs breakdown you need to give a tag like e.g. "BILLING" with a relevant value to your EC2 instances, S3 buckets, ELBs etc.
 
-Otherwise the script will 
+Otherwise the script will just break down your costs per service and service type (e.g. ec2 * BoxUsage vs ec2 * EBS)
 
 Usage
 -----
