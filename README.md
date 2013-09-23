@@ -14,34 +14,31 @@ To use tag-based costs breakdown you need to give a tag like e.g. "BILLING" with
 
 Otherwise the script will just break down your costs per service and service type (e.g. ec2 * BoxUsage vs ec2 * EBS)
 
+Dependencies
+------------
 
+    $ sudo pip install boto cyclone Twisted
 
+Boto should be configured with an access/secret key pair that allows to read from your bucket that holds the detailed billing CSV file. E.g. check your `/etc/boto.cfg` for the `Credentials` section. 
 
 
 Usage
 -----
 
-
-
-Command-line mode
-~~~~~~~~~~~~~~~~~
-
-    $ python -m aws_billing.driver <account-id> <bucket-name>
-
-
-
-
-Server mode
-~~~~~~~~~~~~~~~~~
-
     $ python -m aws_billing.server <account-id> <bucket-name>
 
+Then point your browser to [localhost:8888](http://localhost:8888/) to see the report. Parsing may be a bit long the first time so be patient. Subsequent calls will be cached for a few minutes though.
 
-Then point your browser to `localhost:8888/` to see the report. Parsing is a bit long so be patient.
 
 Contributing
 ------------
 
-I'm accepting pull requests. Many aspects of the program can/should be improved !
+I'm accepting pull requests !
 
+Many aspects of the program can/should be improved :
+* UI (the program is writing raw html, a nice CSS would be great)
+* command line options (e.g. argparse)
+* parsing (sns topics names should be better recognized)
+* tagged vs non-tagged resources costs imputation (one should be able to cross the 2 tables)
+* etc
 
