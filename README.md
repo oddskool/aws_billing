@@ -40,5 +40,6 @@ Many aspects of the program can/should be improved :
 * command line options (e.g. argparse)
 * parsing (sns topics names should be better recognized)
 * tagged vs non-tagged resources costs imputation (one should be able to cross the 2 tables)
+* daemon mode
 * etc
 
