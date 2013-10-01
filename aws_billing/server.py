@@ -5,14 +5,15 @@ Created on 20 sept. 2013
 @author: ediemert
 '''
 
-import cyclone.web
 import sys
+import time
 
+import cyclone.web
 from twisted.internet import reactor
 from twisted.python import log
+
 from aws_billing.driver import retrieve_fd
 from aws_billing.parser import parse
-import time
 
 
 class MainHandler(cyclone.web.RequestHandler):
@@ -37,12 +38,12 @@ class MainHandler(cyclone.web.RequestHandler):
         self.write("<h2>Tag Based Billing Report</h2><table><tr><th>Billing Tag</th><th>Cost ($)</th></tr>")
         for d in self.application.stats:
             if 'BILLING' in d[0]:
-                self.write("<tr><td>%s</td><td>%.2f</td></tr>"%(d[0][10:],d[1]['Cost']))
+                self.write("<tr><td>%s</td><td>%.2f</td></tr>" % (d[0][10:],d[1]['Cost']))
         self.write("</table>")
         self.write("<h2>Resource Type Based Billing Report</h2><table><tr><th>Billing Tag</th><th>Cost ($)</th></tr>")
         for d in self.application.stats:
             if 'BILLING' not in d[0]:
-                self.write("<tr><td>%s</td><td>%.2f</td></tr>"%(d[0],d[1]['Cost']))
+                self.write("<tr><td>%s</td><td>%.2f</td></tr>" % (d[0],d[1]['Cost']))
         self.write("</table>")
         self.write("</p><tiny><a href='https://github.com/oddskool/aws_billing'>Fork me on Github !</a></tiny></p>")
 
